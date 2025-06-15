@@ -37,7 +37,7 @@ function clearForm() {
     productPriceInput.value = "";
     productCategoryInput.value = "";
     productDescriptionInput.value = "";
-    productImageInput.type = "";
+    productImageInput.value = "";
 
     const preview = document.getElementById("imagePreview");
     preview.src = "";
@@ -49,9 +49,13 @@ function displayProduct(list) {
     var blackBox = ``;
 
     if (list.length === 0) {
+    if (productSearchInput.value.trim() !== "") {
         document.getElementById("productList").innerHTML = `<div class="alert alert-warning text-center w-100">🚫 لا توجد منتجات مطابقة للبحث.</div>`;
-        return;
+    } else {
+        document.getElementById("productList").innerHTML = ""; 
     }
+    return;
+}
 
     for (var i = 0; i < list.length; i++) {
         blackBox += `
