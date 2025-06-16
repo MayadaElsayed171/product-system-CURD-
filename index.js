@@ -66,7 +66,7 @@ function displayProduct(list) {
                 </figure>
                 <div class="d-flex justify-content-between p-3">
                     <span class="badge text-bg-primary">${list[i].category}</span>
-                    <span class="text-danger">${list[i].price}</span>
+                    <span class="text-danger">${Number(list[i].price).toLocaleString()} ج.م</span>
                 </div>
                 <div class="card-body">
                     <h3 class="card-title h5">${list[i].name}</h3>
